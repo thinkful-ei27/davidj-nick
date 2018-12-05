@@ -1,3 +1,4 @@
+/*
 //Drill 1
 let loaf = {
   flour: 300,
@@ -71,5 +72,34 @@ for(x = 0; x < objectArray.length; x++){
   }
 }
 
+*/
+//Drill 5 is above. Updated Drill 4
 
-//Drill 5
+//Drill 6 coded message: 'craft block argon meter bells brown croon droop'
+//a => 2 b => 3 c => 4 d => 5 all others => ' '
+
+const objectCypher = {
+  a: 2,
+  b: 3,
+  c: 4,
+  d: 5,
+};
+
+function decode(word){
+  if(objectCypher[word.charAt(0)] === undefined){
+    return ' ';
+  } else return word[objectCypher[word.charAt(0)] - 1];
+}
+
+let randomWords = 'craft block argon meter bells brown croon droop';
+
+function decodeWords(stringOfWords){
+  let tempString = stringOfWords.split(' ');
+  let code = '';
+  for(x = 0; x < tempString.length; x++){
+    code = code + decode(tempString[x]);
+  }
+  return code;
+}
+
+console.log(decodeWords(randomWords));
