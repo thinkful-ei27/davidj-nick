@@ -153,11 +153,23 @@ const HEROES = [
   { id: 7, name: 'Hulk', squad: 'Avengers' },
 ];
 
-function isEqualID(element){
-  return element.id === query.id;
-}
-
 function findOne(arr, query){
   let queryValues = Object.values(query);
-  arr.find()
+  arr.find( (element) => {
+    console.log('Element ID is ' + element.id + 'Query ID is' + query.id);
+    console.log('Element name is ' + element.name + 'Query name is' + query.name);
+    console.log('Element squard is ' + element.squad + 'Query squad is' + query.squad);
+    if (element.id === query.id) {
+      return true;
+    } else if (element.name === query.name) {
+      return true;
+    } else if (element.squad === query.squard) {
+      return true;
+    } else {
+      return false;
+    }
+  })
 }
+let test = findOne(HEROES, { id: 1 });
+console.log(typeof test);
+
