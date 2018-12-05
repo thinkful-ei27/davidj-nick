@@ -126,10 +126,15 @@ const objectA = {
   const expectedKeys = ['id', 'name', 'age', 'city'];
   
   function validateKeys(object, expectedKeys) {
-    let actualKeys = Object.keys(object);
-    actualKeys.sort();
-    expectedKeys.sort();
-    return actualKeys == expectedKeys;
+    let actualKeys = Object.keys(object).sort();
+    let tempKeys = expectedKeys.sort();
+    if(actualKeys.length !== tempKeys.length){
+        return false;
+    } else for (x = 0; x < actualKeys.length; x++){
+        if(actualKeys[x] !== tempKeys[x]){
+            return false;
+        }
+    } return true;
   }
    
   
