@@ -154,22 +154,24 @@ const HEROES = [
 ];
 
 function findOne(arr, query){
-  let queryValues = Object.values(query);
-  arr.find( (element) => {
-    console.log('Element ID is ' + element.id + 'Query ID is' + query.id);
+  let findFunction = arr.find( (element) => { 
+    /*console.log('Element ID is ' + element.id + 'Query ID is' + query.id);
     console.log('Element name is ' + element.name + 'Query name is' + query.name);
-    console.log('Element squard is ' + element.squad + 'Query squad is' + query.squad);
+    console.log('Element squad is ' + element.squad + 'Query squad is' + query.squad);*/
+  
     if (element.id === query.id) {
       return true;
     } else if (element.name === query.name) {
       return true;
-    } else if (element.squad === query.squard) {
+    } else if (element.squad === query.squad) {
       return true;
     } else {
       return false;
     }
-  })
+  });
+  if(findFunction === undefined){
+    return null;
+  } else return findFunction;
 }
-let test = findOne(HEROES, { id: 1 });
-console.log(typeof test);
 
+console.log(findOne(HEROES, { id: 10}));
