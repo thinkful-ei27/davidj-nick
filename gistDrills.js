@@ -103,3 +103,36 @@ function decodeWords(stringOfWords){
 }
 
 console.log(decodeWords(randomWords));
+
+function createCharacter(Name, nickName, race, origin, attack, defense) {
+  return {
+    name: Name,
+    nickName: nickName,
+    race: race,
+    origin: origin,
+    attack: attack,
+    defense: defense,
+    describe: function() {
+      console.log(`${this.name} is a ${this.race} from ${this.origin}.`);
+    },
+    evaluateFight: function(char) {
+      let x = this.attack - char.defense;
+      let y = char.attack - this.defense;
+      if (x < 0) x = 0;
+      if (y < 0) y = 0;
+      return `Your opponent takes ${x} damage and you receive ${y} damage`;
+    }
+  }
+}
+
+let characterArray = [createCharacter('Gandalf the White', 'gandalf', 'Wizard', 'Middle Earth', 10, 6)
+                      ,createCharacter('Bilbo Baggins', 'bilbo', 'Hobbit', 'The Shire', 2, 1)
+                      ,createCharacter ('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 3, 2)
+                      ,createCharacter('Aragorn son of Arathorn', 'aragorn', 'Man', 'Dunnedain', 6, 8)
+                      ,createCharacter('Legolas', 'legolas', 'Elf', 'Woodland Realm', 8, 5)
+                      ,createCharacter('Arwen Undomiel', 'arwen', 'Half-Elf', 'Rivendell', 0, 0)];
+function isAragon(character) { 
+  console.log(character[nickName]);
+  return (character[nickName] === 'aragon')
+}
+console.log(characterArray.find(isAragon()));
