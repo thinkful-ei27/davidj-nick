@@ -40,7 +40,7 @@
   
   // tests
   
-  function testIt() {
+  /*function testIt() {
     var testData = [
       {
         name: 'Burt',
@@ -87,5 +87,18 @@
     }
   }
   
-  testIt();
+  testIt();*/
+  const scratchData = [
+    { id: 22, foo: 'bar' },
+    { id: 28, foo: 'bizz' },
+    { id: 19, foo: 'bazz' },
+  ];
   
+ function findById(items, idNum) {
+      let array = [];
+    for (let i = 0; i < items.length; i++) {
+        if (items[i].id === idNum) {
+            return items[i]
+        }
+    }
+  }
