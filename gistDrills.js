@@ -26,7 +26,9 @@ for(const key in drillObject){
 	console.log(drillObject[key]);
 	
 }
-
+//Drill 3
+//Drill 3
+//Drill 3
 //Drill 3
 let drillObject2 = {
 	meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper'],
@@ -37,17 +39,21 @@ console.log(drillObject2.meals[3]);
 
 let object1 = {
   name: 'David Johnson',
-  jobTitle: 'Master of Arguing In A Classy Manner'
+  jobTitle: 'Master of Arguing In A Classy Manner',
+  boss:'Comrade Ducky-san'
 };
 
 let object2 = {
   name: 'Nick Justin',
-  jobTitle: 'Swift Wit Regarding Languages'
+  jobTitle: 'Swift Wit Regarding Languages',
+  boss:'Comrade Ducky-san'
 };
 
 let object3 = {
   name: 'Santa Claus',
-  jobTitle: 'Santa'
+  jobTitle: 'Santa',
+  boss:'Comrade Ducky-san'
+
 };
 
 let object4 = {
@@ -58,5 +64,12 @@ let object4 = {
 let objectArray = [object1, object2, object3, object4];
 
 for(x = 0; x < objectArray.length; x++){
-  console.log(`${objectArray[x].name} is a great ${objectArray[x].jobTitle}`)
+  if (objectArray[x].boss === undefined) {
+    console.log(`${objectArray[x].jobTitle} ${objectArray[x].name} doesn't report to anybody`);
+  } else {
+  console.log(`${objectArray[x].jobTitle} ${objectArray[x].name} reports to ${objectArray[x].boss}`)
+  }
 }
+
+
+//Drill 5
