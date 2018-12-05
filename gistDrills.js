@@ -154,12 +154,32 @@ const HEROES = [
 ];
 
 function findOne(arr, query){
-  let findFunction = arr.find( (element) => { 
+  let queryId = query.id === undefined ? false : true;
+  let queryName = query.name === undefined ? false : true;
+  let querySquad = query.squad === undefined ? false : true;
+  let result = arr.slice(0);
+  if(queryId === true){
+    result = result.filter(element => query.id === element.id);
+  }
+  if(queryName === true){
+    result = result.filter(element => query.name === element.name );
+  }
+  
+  if(querySquad === true){
+    result = result.filter(element => query.squad === element.squad );
+  }
+  
+  if(result.length > 0){ 
+    console.log(result[0]);
+  } else console.log(null);
+  /*let findFunction = arr.find( (element) => {
+    
+    
     /*console.log('Element ID is ' + element.id + 'Query ID is' + query.id);
     console.log('Element name is ' + element.name + 'Query name is' + query.name);
     console.log('Element squad is ' + element.squad + 'Query squad is' + query.squad);*/
   
-    if (element.id === query.id) {
+    /*if (element.id === query.id) {
       return true;
     } else if (element.name === query.name) {
       return true;
@@ -171,7 +191,18 @@ function findOne(arr, query){
   });
   if(findFunction === undefined){
     return null;
-  } else return findFunction;
+  } else return findFunction;*/
 }
 
-console.log(findOne(HEROES, { id: 10}));
+findOne(HEROES, { id: 1 });
+
+
+findOne(HEROES, { id: 10 });
+
+
+findOne(HEROES, { id: 2, name: 'Aquaman' });
+
+findOne(HEROES, { id: 5, squad: 'Justice League' });
+
+
+findOne(HEROES, { squad: 'Justice League' });
