@@ -77,7 +77,7 @@ for(x = 0; x < objectArray.length; x++){
 
 //Drill 6 coded message: 'craft block argon meter bells brown croon droop'
 //a => 2 b => 3 c => 4 d => 5 all others => ' '
-
+/*
 const objectCypher = {
   a: 2,
   b: 3,
@@ -103,7 +103,7 @@ function decodeWords(stringOfWords){
 }
 
 console.log(decodeWords(randomWords));
-
+*/
 function createCharacter(Name, nickName, race, origin, attack, defense) {
   return {
     name: Name,
@@ -131,8 +131,7 @@ let characterArray = [createCharacter('Gandalf the White', 'gandalf', 'Wizard', 
                       ,createCharacter('Aragorn son of Arathorn', 'aragorn', 'Man', 'Dunnedain', 6, 8)
                       ,createCharacter('Legolas', 'legolas', 'Elf', 'Woodland Realm', 8, 5)
                       ,createCharacter('Arwen Undomiel', 'arwen', 'Half-Elf', 'Rivendell', 0, 0)];
-function isAragon(character) { 
-  console.log(character[nickName]);
-  return (character[nickName] === 'aragon')
+function isAragorn(character) { 
+  return character.nickName === 'aragorn';
 }
-console.log(characterArray.find(isAragon()));
+console.log((characterArray.find(isAragorn)).race);
