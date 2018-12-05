@@ -134,4 +134,4 @@ let characterArray = [createCharacter('Gandalf the White', 'gandalf', 'Wizard', 
 function isAragorn(character) { 
   return character.nickName === 'aragorn';
 }
-console.log((characterArray.find(isAragorn)).race);
+characterArray.find(isAragorn).describe();
