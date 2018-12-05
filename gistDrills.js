@@ -22,5 +22,12 @@ let drillObject = {
 };
 
 for(const key in drillObject){
-  console.log(drillObject[key]);
+
+	console.log(drillObject[key]);
+	
 }
+
+let drillObject2 = {
+	meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper'],
+}
+console.log(drillObject2.meals[3]);
