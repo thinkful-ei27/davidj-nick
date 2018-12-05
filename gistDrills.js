@@ -124,7 +124,6 @@ function createCharacter(Name, nickName, race, origin, attack, defense) {
     }
   }
 }
-
 let characterArray = [createCharacter('Gandalf the White', 'gandalf', 'Wizard', 'Middle Earth', 10, 6)
                       ,createCharacter('Bilbo Baggins', 'bilbo', 'Hobbit', 'The Shire', 2, 1)
                       ,createCharacter ('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 3, 2)
@@ -135,3 +134,9 @@ function isAragorn(character) {
   return character.nickName === 'aragorn';
 }
 characterArray.find(isAragorn).describe();
+
+let hobbitArray = characterArray.filter(word => word.race === 'Hobbit');
+console.log(hobbitArray);
+let strongCharArray = characterArray.filter(attack => attack.attack > 5);
+console.log(strongCharArray);
+//long discusion was had about the weapon thing.
